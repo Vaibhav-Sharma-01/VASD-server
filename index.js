@@ -10,6 +10,10 @@ const users = {};
 
 const socketToRoom = {};
 
+app.get('/', (req, res) => {
+	res.send('Running...');
+});
+
 io.on('connection', socket => {
     socket.on("join room", roomID => {
         if (users[roomID]) {
